@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codev - AI Agent Automation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Codev AI Agent</h1>
+            <p class="subtitle">Your Signature AI Agent Builder</p>
+        </header>
+
+        <main>
+            <section class="task-input-section">
+                <h2>Execute Task</h2>
+                <div class="input-group">
+                    <textarea id="taskInput" placeholder="Enter your task here... (e.g., 'Search for Python tutorials' or 'Generate a REST API function')" rows="4"></textarea>
+                    <div class="tool-select-group">
+                        <label for="toolSelect">Tool (optional):</label>
+                        <select id="toolSelect">
+                            <option value="">Auto-select</option>
+                        </select>
+                    </div>
+                    <button id="executeBtn" onclick="executeTask()">Execute Task</button>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <h2>Results</h2>
+                <div id="results" class="results-container">
+                    <p class="placeholder">Results will appear here...</p>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <div class="section-header">
+                    <h2>Task History</h2>
+                    <button onclick="loadHistory()" class="refresh-btn">🔄 Refresh</button>
+                </div>
+                <div id="history" class="history-container">
+                    <p class="placeholder">No tasks executed yet.</p>
+                </div>
+            </section>
+
+            <section class="tools-section">
+                <h2>Available Tools</h2>
+                <div id="tools" class="tools-container">
+                    <p class="placeholder">Loading tools...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Vinod Hatti - Codev AI Agent System</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
