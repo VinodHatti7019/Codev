@@ -34,3 +34,7 @@ Built by [VinodHatti7019](https://github.com/VinodHatti7019), Codev is more than
 ## ✨ Feature Update 1
 
 This branch includes the first feature update for the Codev project!
+
+## 🚀 Feature Update 2
+
+Adding collaborative development features with co-authored commits!
