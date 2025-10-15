@@ -1,0 +1,75 @@
+/* Global CSS styles for Codev Web UI */
+/* Import Tailwind CSS base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for dark theme */
+@layer base {
+  /* Set dark background and text colors */
+  body {
+    @apply bg-primary-900 text-gray-100;
+  }
+
+  /* Customize scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+/* Component-level styles */
+@layer components {
+  /* Sidebar navigation styles */
+  .sidebar {
+    @apply bg-primary-800 border-r border-primary-700;
+  }
+
+  /* Main content area styles */
+  .main-content {
+    @apply bg-primary-900 text-gray-100;
+  }
+
+  /* Chat message bubble styles */
+  .message-user {
+    @apply bg-accent-600 text-white rounded-2xl px-4 py-3;
+  }
+
+  .message-assistant {
+    @apply bg-primary-700 text-gray-100 rounded-2xl px-4 py-3;
+  }
+
+  /* Input field styles */
+  .input-field {
+    @apply bg-primary-800 border border-primary-700 text-gray-100 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-500;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-accent-600 hover:bg-accent-700 text-white font-medium rounded-lg px-4 py-2 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-primary-700 hover:bg-primary-600 text-gray-100 font-medium rounded-lg px-4 py-2 transition-colors;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Smooth transitions for all interactive elements */
+  .transition-smooth {
+    transition: all 0.3s ease-in-out;
+  }
+}
