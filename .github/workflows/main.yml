@@ -1,34 +1,36 @@
+---
 name: Update Task Hall of Fame
-
-on:
+"on":
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   issues:
     types: [opened, closed]
-
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      
+
       - name: Update Task Hall of Fame
         run: |
           echo "Updating Task Hall of Fame..."
           python -c "print('Task Hall of Fame updated!')"
-      
+
       - name: Commit changes
         run: |
-          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --local user.email \
+            'github-actions[bot]@users.noreply.github.com'
           git config --local user.name 'github-actions[bot]'
           git add README.md || true
-          git commit -m 'Auto-update Task Hall of Fame [skip ci]' || echo 'No changes to commit'
+          git commit -m \
+            'Auto-update Task Hall of Fame [skip ci]' || \
+            echo 'No changes to commit'
           git push || echo 'Nothing to push'
